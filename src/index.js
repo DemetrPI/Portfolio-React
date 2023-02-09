@@ -1,13 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+export function AddScript(scriptSource) {
+  const script = document.createElement('script');
+  script.src = scriptSource;
+  script.async = true;
+  document.body.appendChild(script);
+}
+
+export function AddModule(scriptSource) {
+  const script = document.createElement('script');
+  script.src = scriptSource;
+  script.async = true;
+  script.type = "module"
+  
+  document.body.appendChild(script);
+}
+
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <App>
+        {AddScript('./assets/JS/main.js')}
+        {AddModule('./assets/JS/autoLangSelect.js')}
+        </App>
   </React.StrictMode>
 );
 
