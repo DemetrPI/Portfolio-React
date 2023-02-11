@@ -1,5 +1,6 @@
 import './assets/CSS/normalize.css'
 import './assets/CSS/styles.css'
+import Pdf from '../src/assets/curriculum.pdf'
 
 function App () {
 return (
@@ -95,9 +96,9 @@ return (
                   <a
                     alt="Dmytro Pishchenkov`s resumé"
                     className="resumeLink"
-                    href="#"
+                    href={Pdf}
                     rel="noopener noreferrer"
-                    
+                    target='_blank'                    
                   >
                     Resumé
                   </a>
